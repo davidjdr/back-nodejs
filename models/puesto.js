@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING,
     entrada: DataTypes.TIME,
     salida: DataTypes.TIME,
-    diasLaborales: DataTypes.ENUM('D','L','M','X','J','V','S'),
+    diasLaborales: {
+      type:   Sequelize.ENUM,
+      values: ['D','L','M','X','J','V','S']
+    },
     sueldo: DataTypes.NUMERIC,
     descripcion: DataTypes.STRING
   }, {});
