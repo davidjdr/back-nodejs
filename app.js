@@ -5,6 +5,7 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     swaggerJSDoc = require('swagger-jsdoc'),
     swaggerUi = require('swagger-ui-express'),
+    logger = require('morgan'),
     //generamos una app
     app = express();
 
@@ -40,6 +41,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+// Log requests to the console.
+app.use(logger(process.env.NODE_ENV));
 
 // Configuración global de rutas
 app.use(require('./routes/index'));

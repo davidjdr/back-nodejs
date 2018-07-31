@@ -1,11 +1,12 @@
 {
   "name": "back-nodejs",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Proyecto Backend bajo nodejs 8.11",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node app.js"
+    "start": "node --use_strict app.js",
+    "start:dev": "nodemon --use_strict app.js"
   },
   "repository": {
     "type": "git",
@@ -21,13 +22,19 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "lodash": "^4.17.10",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
     "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0",
     "swagger-jsdoc": "^1.9.7",
     "swagger-ui-express": "^3.0.10"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "sequelize-cli": "^4.0.0"
   }
 }
